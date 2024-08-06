@@ -1,0 +1,7 @@
+apiVersion: networking.gke.io/v1
+kind: ManagedCertificate
+metadata:
+  name: istio-dynacloud-site-cert
+spec:
+  domains:
+    - istio.dynacloud.site
