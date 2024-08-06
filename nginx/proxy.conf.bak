@@ -1,9 +1,0 @@
-server {
-  listen 80;
-  server_name istio.dynacloud.site;
-
-  location / {
-     proxy_set_header Host ifconfig.me;
-     proxy_pass http://ifconfig.me;
-  }
-}
