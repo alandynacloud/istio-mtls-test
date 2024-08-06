@@ -1,0 +1,9 @@
+server {
+  listen 80;
+  server_name $DOMAIN_NAME;
+
+  location / {
+     proxy_set_header Host ifconfig.me;
+     proxy_pass http://ifconfig.me;
+  }
+}
