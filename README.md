@@ -11,6 +11,7 @@ cloud nat:demo-nat
 terraform apply
 ```
 
+
 下載測試範例
 
 ```
@@ -71,7 +72,8 @@ for template in $(find ./ -name '*.tmpl')
   kubectl label namespace istio-system \
       istio.io/rev- istio-injection=enabled --overwrite
 ```
-![image](https://hackmd.io/_uploads/ryz5Qsxq0.png)
+![image](https://github.com/user-attachments/assets/f89aaffb-3704-4a9e-a76a-855ed85b819a)
+
 
 
 
@@ -79,14 +81,16 @@ for template in $(find ./ -name '*.tmpl')
 ```
 kubectl apply -n istio-system -f istio-ingressgateway/
 ```
-![image](https://hackmd.io/_uploads/S1cimjeq0.png)
+![image](https://github.com/user-attachments/assets/d9e21eb7-ff7e-463d-a094-0732764601fe)
+
 
 
 確認ManagedCertificate以及ingress
 ```
 kubectl get ManagedCertificate,ingress -n istio-system
 ```
-![image](https://hackmd.io/_uploads/S1067oxcC.png)
+![image](https://github.com/user-attachments/assets/272b089a-97c2-4a7c-915e-a4757e02210c)
+
 
 
 # 佈署應用程式
@@ -103,7 +107,8 @@ kubectl apply -f nginx/nginx-app.yaml
 kubectl apply -f nginx/nginx-gateway.yaml 
 kubectl get pod,svc
 ```
-![image](https://hackmd.io/_uploads/BktaIjl5R.png)
+![image](https://github.com/user-attachments/assets/63102fc7-9cc8-496a-8732-9f7a35548dd1)
+
 
 svervice/nginx-service type目前使用LoadBalancer 以方便確認開啟mtls後測試
 
@@ -112,7 +117,8 @@ svervice/nginx-service type目前使用LoadBalancer 以方便確認開啟mtls後
 ```
 kubectl get svc
 ```
-![image](https://hackmd.io/_uploads/HJ5MPox50.png)
+![image](https://github.com/user-attachments/assets/884f450e-adc6-4ea4-ba4b-f2f645d7f43b)
+
 
 
 
@@ -127,17 +133,20 @@ curl $LOADBALANCER_IP
 ```
 kubeclt apply -f nginx/mtls-namespace.yaml
 ```
-![image](https://hackmd.io/_uploads/B1tIPog9R.png)
+![image](https://github.com/user-attachments/assets/81126361-61f3-4ad3-aeb7-c981d5c7d858)
+
 
 測試svervice/nginx-service type開的LoadBalancer IP，由於clinet端無法跟應用程式進行雙向加密所以無法連線，但如果走ingress則可以正常access
 ```
 curl $LOADBALANCER_IP
 ```
-![image](https://hackmd.io/_uploads/BkjEPilq0.png)
+![image](https://github.com/user-attachments/assets/5e3199a4-deed-472e-9548-02c6d7083d9f)
+
 
 
 從叢集外browser測試
-![image](https://hackmd.io/_uploads/HkBsvse9A.png)
+![image](https://github.com/user-attachments/assets/e8e86c4b-3edf-456b-bd64-d4cd853f1701)
+
 
 
 可透過cloud shell 
@@ -145,7 +154,8 @@ curl $LOADBALANCER_IP
 curl $DOMAIN_NAME;echo
 ```
 
-![image](https://hackmd.io/_uploads/HkJlujeqA.png)
+![image](https://github.com/user-attachments/assets/4064b503-c256-41a8-8028-1fad7c22b3d6)
+
 
 
 
