@@ -28,7 +28,7 @@ cd istio-mtls-test
 建立nginx應用程式image
 該nginx作為proxy，將流量轉至三方網站，該網站(ifconfig.me)確認來源ip
 
-# 建立imag
+# 建立IMAGE
 ```
 docker build -t $IMAGE_NAME .
 ```
