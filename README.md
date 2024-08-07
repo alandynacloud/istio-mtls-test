@@ -1,9 +1,13 @@
 # istio-mtls-test
 
 建立測試環境
+
 該環境會建置以下項目
+
 vpc:k8s-vpc
+
 gke-private-cluster:demo-gke(開啟service mesh)
+
 cloud nat:demo-nat
 ![istio-mtls-test drawio](https://github.com/user-attachments/assets/76ea4156-d206-4ae1-b628-3b5d4c345eb8)
 
